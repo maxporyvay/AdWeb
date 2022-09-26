@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdWeb.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:AdWeb.Contracts.AdWebDto">
+            <summary>
+            Модель представления объявления.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdWebDto.Id">
+            <summary>
+            Идентификатор объявления.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdWebDto.AdTitle">
+            <summary>
+            Заголовок объявления.
+            </summary>
+        </member>
+    </members>
+</doc>
