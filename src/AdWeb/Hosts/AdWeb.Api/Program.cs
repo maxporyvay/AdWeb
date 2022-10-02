@@ -1,15 +1,18 @@
+using AdWeb.Registerer;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddServices();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "AdWeb Api", Version = "v1" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "AdWeb Api", Version = "V1" });
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Documentation.xml"));
 });
 

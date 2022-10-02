@@ -23,15 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdWeb.DataAccess", "src\AdWeb\Infrastructure\AdWeb.DataAccess\AdWeb.DataAccess.csproj", "{F3D110D0-CFF7-4692-9B8F-D1395B9E9086}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdWeb.Registerer", "src\AdWeb\Infrastructure\AdWeb.Registerer\AdWeb.Registerer.csproj", "{A3DD2A20-7E30-41A2-9BBD-3970FC32ADD2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWeb.Migrations", "src\AdWeb\Infrastructure\AdWeb.Migrations\AdWeb.Migrations.csproj", "{3F26A4F7-CDEB-424E-857B-0C50519DEBB4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWeb.Infrastructure", "src\AdWeb\Infrastructure\AdWeb.Infrastructure\AdWeb.Infrastructure.csproj", "{EFC7E09D-2388-486B-A84C-C1127B0C8261}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9F55A590-3B91-4406-A1C7-C1AD53046CD5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWeb.AppServices", "src\AdWeb\Application\AdWeb.AppServices\AdWeb.AppServices.csproj", "{A5FFA847-A923-407C-BE65-E0FCAC4BD14A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWeb.Registerer", "src\AdWeb\Infrastructure\Registerer\AdWeb.Registerer\AdWeb.Registerer.csproj", "{A3DD2A20-7E30-41A2-9BBD-3970FC32ADD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,18 +51,6 @@ Global
 		{A3DD2A20-7E30-41A2-9BBD-3970FC32ADD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3DD2A20-7E30-41A2-9BBD-3970FC32ADD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3DD2A20-7E30-41A2-9BBD-3970FC32ADD2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F26A4F7-CDEB-424E-857B-0C50519DEBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F26A4F7-CDEB-424E-857B-0C50519DEBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F26A4F7-CDEB-424E-857B-0C50519DEBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F26A4F7-CDEB-424E-857B-0C50519DEBB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFC7E09D-2388-486B-A84C-C1127B0C8261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFC7E09D-2388-486B-A84C-C1127B0C8261}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFC7E09D-2388-486B-A84C-C1127B0C8261}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFC7E09D-2388-486B-A84C-C1127B0C8261}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5FFA847-A923-407C-BE65-E0FCAC4BD14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5FFA847-A923-407C-BE65-E0FCAC4BD14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5FFA847-A923-407C-BE65-E0FCAC4BD14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5FFA847-A923-407C-BE65-E0FCAC4BD14A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,10 +66,6 @@ Global
 		{D0B89622-8A3A-43B2-B50B-76C1A4F5C78F} = {1CD2573A-ECE7-4902-9689-B6BE2E6D7A70}
 		{F3D110D0-CFF7-4692-9B8F-D1395B9E9086} = {D0B89622-8A3A-43B2-B50B-76C1A4F5C78F}
 		{A3DD2A20-7E30-41A2-9BBD-3970FC32ADD2} = {D0B89622-8A3A-43B2-B50B-76C1A4F5C78F}
-		{3F26A4F7-CDEB-424E-857B-0C50519DEBB4} = {D0B89622-8A3A-43B2-B50B-76C1A4F5C78F}
-		{EFC7E09D-2388-486B-A84C-C1127B0C8261} = {D0B89622-8A3A-43B2-B50B-76C1A4F5C78F}
-		{9F55A590-3B91-4406-A1C7-C1AD53046CD5} = {1CD2573A-ECE7-4902-9689-B6BE2E6D7A70}
-		{A5FFA847-A923-407C-BE65-E0FCAC4BD14A} = {9F55A590-3B91-4406-A1C7-C1AD53046CD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0558F81-961C-4652-81FE-1141D1B38AC0}

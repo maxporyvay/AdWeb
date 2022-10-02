@@ -4,17 +4,17 @@
         <name>AdWeb.Contracts</name>
     </assembly>
     <members>
-        <member name="T:AdWeb.Contracts.AdWebDto">
+        <member name="T:AdWeb.Contracts.AdBoardDto">
             <summary>
-            Модель представления объявления.
+            Модель представления доски объявлений.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdWebDto.Id">
+        <member name="P:AdWeb.Contracts.AdBoardDto.Id">
             <summary>
-            Идентификатор объявления.
+            Идентификатор доски объявлений.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdWebDto.AdTitle">
+        <member name="P:AdWeb.Contracts.AdBoardDto.AdTitle">
             <summary>
             Заголовок объявления.
             </summary>

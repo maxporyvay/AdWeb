@@ -9,7 +9,7 @@ namespace AdWeb.Contracts
     /// <summary>
     /// Модель представления объявления.
     /// </summary>
-    public class AdWebDto
+    public class AdDto
     {
         /// <summary>
         /// Идентификатор объявления.
@@ -19,6 +19,13 @@ namespace AdWeb.Contracts
         /// Заголовок объявления.
         /// </summary>
         public string AdTitle { get; set; }
-
+        /// <summary>
+        /// Описание объявления.
+        /// </summary>
+        public string AdDescription { get; set; }
+        /// <summary>
+        /// Время публикации объявления.
+        /// </summary>
+        public DateTime PublishTime { get; set; }
     }
 }

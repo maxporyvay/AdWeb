@@ -19,9 +19,9 @@ namespace AdWeb.Api.Controllers
         /// <summary>
         /// Возвращает объявления, размещенные пользователями.
         /// </summary>
-        /// <returns>Коллекция элементов <see cref="AdWebDto"/>.</returns>
+        /// <returns>Коллекция элементов <see cref="AdBoardDto"/>.</returns>
         [HttpGet]
-        [ProducesResponseType(typeof(IReadOnlyCollection<AdWebDto>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IReadOnlyCollection<AdBoardDto>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetAsync()
         {
             return await Task.FromResult(Ok());

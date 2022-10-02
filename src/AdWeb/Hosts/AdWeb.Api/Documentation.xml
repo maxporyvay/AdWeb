@@ -13,7 +13,7 @@
             <summary>
             Возвращает объявления, размещенные пользователями.
             </summary>
-            <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdWebDto"/>.</returns>
+            <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoardDto"/>.</returns>
         </member>
         <member name="M:AdWeb.Api.Controllers.AdWebController.DeleteAsync(System.Guid)">
             <summary>

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Contracts\AdWeb.Contracts\AdWeb.Contracts.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\AdWeb.Registerer\AdWeb.Registerer.csproj" />
   </ItemGroup>
 
 </Project>
