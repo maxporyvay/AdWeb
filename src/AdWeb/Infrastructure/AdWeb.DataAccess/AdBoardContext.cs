@@ -14,7 +14,7 @@ namespace AdWeb.DataAccess
         /// <summary>
         /// Инициализирует экземпляр <see cref="AdBoardContext"/>
         /// </summary>
-        protected AdBoardContext(DbContextOptions options) : base(options)
+        public AdBoardContext(DbContextOptions options) : base(options)
         {
 
         }

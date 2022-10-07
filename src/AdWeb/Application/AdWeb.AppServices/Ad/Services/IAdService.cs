@@ -18,13 +18,13 @@ namespace AdWeb.AppServices.Ad.Services
         /// <param name="take"></param>
         /// <param name="skip"></param>
         /// <returns></returns>
-        Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip);
+        Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip, CancellationToken cancellation);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        Task<IReadOnlyCollection<AdDto>> GetAllFiltered(AdFilterRequest request);
+        Task<IReadOnlyCollection<AdDto>> GetAllFiltered(AdFilterRequest request, CancellationToken cancellation);
     }
 }

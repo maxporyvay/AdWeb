@@ -1,5 +1,6 @@
 ﻿using AdWeb.AppServices.Ad.Repositories;
 using AdWeb.AppServices.Ad.Services;
+using AdWeb.AppServices.Services;
 using AdWeb.DataAccess;
 using AdWeb.DataAccess.EntityConfigurations.Ad;
 using AdWeb.DataAccess.Interfaces;
@@ -18,12 +19,15 @@ namespace AdWeb.Registerer
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
+            services.AddSingleton<IDateTimeService, DateTimeService>();
+
             services.AddDbContext<AdBoardContext>((Action<IServiceProvider, DbContextOptionsBuilder>)
               ((sp, dbOptions) => sp.GetRequiredService<IDbContextOptionsConfigurator<AdBoardContext>>()
                 .Configure((DbContextOptionsBuilder<AdBoardContext>)dbOptions)));
             services.AddSingleton<IDbContextOptionsConfigurator<AdBoardContext>, AdBoardContextConfiguration>();
             services.AddScoped(sp => (DbContext)sp.GetRequiredService<AdBoardContext>());
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
             services.AddTransient<IAdRepository, AdRepository>();
             services.AddTransient<IAdService, AdService>();
 

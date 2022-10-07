@@ -19,7 +19,7 @@ namespace AdWeb.DataAccess.EntityConfigurations.Ad
             _repository = repository;
         }
 
-        public async Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip)
+        public async Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip, CancellationToken cancellation)
         {
             return await _repository.GetAll()
                 .Select(p => new AdDto
@@ -29,10 +29,10 @@ namespace AdWeb.DataAccess.EntityConfigurations.Ad
                     AdDescription = p.AdDescription,
                     PublishTime = p.PublishTime
                 })
-                .Take(take).Skip(skip).ToListAsync();
+                .Take(take).Skip(skip).ToListAsync(cancellation);
         }
 
-        public async Task<IReadOnlyCollection<AdDto>> GetAllFiltered(AdFilterRequest request)
+        public async Task<IReadOnlyCollection<AdDto>> GetAllFiltered(AdFilterRequest request, CancellationToken cancellation)
         {
             var query = _repository.GetAll();
 
@@ -52,7 +52,7 @@ namespace AdWeb.DataAccess.EntityConfigurations.Ad
                     AdTitle = p.AdTitle,
                     AdDescription = p.AdDescription,
                     PublishTime = p.PublishTime
-                }).ToListAsync();
+                }).ToListAsync(cancellation);
         }
     }
 }

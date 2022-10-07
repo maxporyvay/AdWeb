@@ -1,3 +1,4 @@
+using AdWeb.AppServices.AdBoard.Services;
 using AdWeb.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -9,11 +10,13 @@ namespace AdWeb.Api.Controllers
     /// </summary>
     [ApiController]
     [Route("v1/[controller]")]
-    public class AdWebController : ControllerBase
+    public class AdBoardController : ControllerBase
     {
-        public AdWebController()
-        {
+        private readonly IAdBoardService _adBoardService;
 
+        public AdBoardController(IAdBoardService adBoardService)
+        {
+            _adBoardService = adBoardService;
         }
 
         /// <summary>
@@ -24,7 +27,8 @@ namespace AdWeb.Api.Controllers
         [ProducesResponseType(typeof(IReadOnlyCollection<AdBoardDto>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetAsync()
         {
-            return await Task.FromResult(Ok());
+            var result = await _adBoardService.GetAsync();
+            return Ok(result);
         }
 
         /// <summary>
@@ -36,7 +40,8 @@ namespace AdWeb.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> DeleteAsync(Guid id)
         {
-            return await Task.FromResult(Ok());
+            await _adBoardService.DeleteAsync(id);
+            return NoContent();
         }
 
         /// <summary>
@@ -48,7 +53,8 @@ namespace AdWeb.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> UpdateAsync(Guid id)
         {
-            return await Task.FromResult(Ok());
+            await _adBoardService.UpdateAsync(id);
+            return NoContent();
         }
     }
 }

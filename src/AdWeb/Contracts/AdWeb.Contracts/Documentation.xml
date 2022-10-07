@@ -19,5 +19,45 @@
             Заголовок объявления.
             </summary>
         </member>
+        <member name="T:AdWeb.Contracts.AdDto">
+            <summary>
+            Модель представления объявления.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdDto.Id">
+            <summary>
+            Идентификатор объявления.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdDto.AdTitle">
+            <summary>
+            Заголовок объявления.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdDto.AdDescription">
+            <summary>
+            Описание объявления.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdDto.PublishTime">
+            <summary>
+            Время публикации объявления.
+            </summary>
+        </member>
+        <member name="T:AdWeb.Contracts.AdFilterRequest">
+            <summary>
+            Модель фильтра объявлений.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdFilterRequest.Id">
+            <summary>
+            Идентификатор объявления.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.AdFilterRequest.AdTitle">
+            <summary>
+            Заголовок объявления.
+            </summary>
+        </member>
     </members>
 </doc>

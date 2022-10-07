@@ -1,4 +1,5 @@
-﻿using AdWeb.Contracts;
+﻿using AdWeb.AppServices.Ad.Repositories;
+using AdWeb.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,26 @@ using System.Threading.Tasks;
 
 namespace AdWeb.AppServices.Ad.Services
 {
+    /// <inheritdoc />
     public class AdService : IAdService
     {
-        public Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip)
+        private readonly IAdRepository _adRepository;
+
+        public AdService(IAdRepository adRepository)
         {
-            throw new NotImplementedException();
+            _adRepository = adRepository;
         }
 
-        public Task<IReadOnlyCollection<AdDto>> GetAllFiltered(AdFilterRequest request)
+        /// <inheritdoc />
+        public Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip, CancellationToken cancellation)
         {
-            throw new NotImplementedException();
+            return _adRepository.GetAll(take, skip, cancellation);
+        }
+
+        /// <inheritdoc />
+        public Task<IReadOnlyCollection<AdDto>> GetAllFiltered(AdFilterRequest request, CancellationToken cancellation)
+        {
+            return _adRepository.GetAllFiltered(request, cancellation);
         }
     }
 }
