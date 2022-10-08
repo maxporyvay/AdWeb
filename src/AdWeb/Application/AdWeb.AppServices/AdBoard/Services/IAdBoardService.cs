@@ -1,4 +1,4 @@
-﻿using AdWeb.Contracts;
+﻿using AdWeb.Contracts.AdBoard;
 using System;
 using System.Collections.Generic;
 using System.Linq;

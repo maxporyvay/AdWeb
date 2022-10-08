@@ -9,19 +9,19 @@
             Работа с доской объявлений.
             </summary>
         </member>
-        <member name="M:AdWeb.Api.Controllers.AdBoardController.GetAsync">
+        <member name="M:AdWeb.Api.Controllers.AdBoardController.GetAsync(System.Threading.CancellationToken)">
             <summary>
             Возвращает объявления, размещенные пользователями.
             </summary>
-            <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoardDto"/>.</returns>
+            <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoard.AdBoardDto"/>.</returns>
         </member>
-        <member name="M:AdWeb.Api.Controllers.AdBoardController.DeleteAsync(System.Guid)">
+        <member name="M:AdWeb.Api.Controllers.AdBoardController.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
             <summary>
             Удаляет объявление.
             </summary>
             <param name="id">Идентификатор объявления</param>
         </member>
-        <member name="M:AdWeb.Api.Controllers.AdBoardController.UpdateAsync(System.Guid)">
+        <member name="M:AdWeb.Api.Controllers.AdBoardController.UpdateAsync(System.Guid,System.Threading.CancellationToken)">
             <summary>
             Вносит изменения в объявление.
             </summary>

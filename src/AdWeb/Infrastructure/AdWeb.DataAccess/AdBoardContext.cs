@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,8 +22,9 @@ namespace AdWeb.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new AdConfiguration());
-            modelBuilder.ApplyConfiguration(new AdBoardConfiguration());
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly(), t => t.GetInterfaces().Any(i =>
+                i.IsGenericType &&
+                i.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>)));
         }
     }
 }

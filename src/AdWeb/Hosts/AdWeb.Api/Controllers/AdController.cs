@@ -1,5 +1,5 @@
 ﻿using AdWeb.AppServices.Ad.Services;
-using AdWeb.Contracts;
+using AdWeb.Contracts.Ad;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 

@@ -1,5 +1,5 @@
 ﻿using AdWeb.AppServices.Ad.Repositories;
-using AdWeb.Contracts;
+using AdWeb.Contracts.Ad;
 using AdWeb.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;

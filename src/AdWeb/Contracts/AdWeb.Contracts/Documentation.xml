@@ -4,57 +4,57 @@
         <name>AdWeb.Contracts</name>
     </assembly>
     <members>
-        <member name="T:AdWeb.Contracts.AdBoardDto">
+        <member name="T:AdWeb.Contracts.AdBoard.AdBoardDto">
             <summary>
             Модель представления доски объявлений.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdBoardDto.Id">
+        <member name="P:AdWeb.Contracts.AdBoard.AdBoardDto.Id">
             <summary>
             Идентификатор доски объявлений.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdBoardDto.AdTitle">
+        <member name="P:AdWeb.Contracts.AdBoard.AdBoardDto.AdTitle">
             <summary>
             Заголовок объявления.
             </summary>
         </member>
-        <member name="T:AdWeb.Contracts.AdDto">
+        <member name="T:AdWeb.Contracts.Ad.AdDto">
             <summary>
             Модель представления объявления.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdDto.Id">
+        <member name="P:AdWeb.Contracts.Ad.AdDto.Id">
             <summary>
             Идентификатор объявления.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdDto.AdTitle">
+        <member name="P:AdWeb.Contracts.Ad.AdDto.AdTitle">
             <summary>
             Заголовок объявления.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdDto.AdDescription">
+        <member name="P:AdWeb.Contracts.Ad.AdDto.AdDescription">
             <summary>
             Описание объявления.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdDto.PublishTime">
+        <member name="P:AdWeb.Contracts.Ad.AdDto.PublishTime">
             <summary>
             Время публикации объявления.
             </summary>
         </member>
-        <member name="T:AdWeb.Contracts.AdFilterRequest">
+        <member name="T:AdWeb.Contracts.Ad.AdFilterRequest">
             <summary>
             Модель фильтра объявлений.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdFilterRequest.Id">
+        <member name="P:AdWeb.Contracts.Ad.AdFilterRequest.Id">
             <summary>
             Идентификатор объявления.
             </summary>
         </member>
-        <member name="P:AdWeb.Contracts.AdFilterRequest.AdTitle">
+        <member name="P:AdWeb.Contracts.Ad.AdFilterRequest.AdTitle">
             <summary>
             Заголовок объявления.
             </summary>

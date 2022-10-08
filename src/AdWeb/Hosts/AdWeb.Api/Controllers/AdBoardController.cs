@@ -1,5 +1,5 @@
 using AdWeb.AppServices.AdBoard.Services;
-using AdWeb.Contracts;
+using AdWeb.Contracts.AdBoard;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -25,9 +25,9 @@ namespace AdWeb.Api.Controllers
         /// <returns>Коллекция элементов <see cref="AdBoardDto"/>.</returns>
         [HttpGet]
         [ProducesResponseType(typeof(IReadOnlyCollection<AdBoardDto>), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> GetAsync()
+        public async Task<IActionResult> GetAsync(CancellationToken cancellation)
         {
-            var result = await _adBoardService.GetAsync();
+            var result = await _adBoardService.GetAsync(cancellation);
             return Ok(result);
         }
 
@@ -38,9 +38,9 @@ namespace AdWeb.Api.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> DeleteAsync(Guid id)
+        public async Task<IActionResult> DeleteAsync(Guid id, CancellationToken cancellation)
         {
-            await _adBoardService.DeleteAsync(id);
+            await _adBoardService.DeleteAsync(id, cancellation);
             return NoContent();
         }
 
@@ -51,9 +51,9 @@ namespace AdWeb.Api.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> UpdateAsync(Guid id)
+        public async Task<IActionResult> UpdateAsync(Guid id, CancellationToken cancellation)
         {
-            await _adBoardService.UpdateAsync(id);
+            await _adBoardService.UpdateAsync(id, cancellation);
             return NoContent();
         }
     }

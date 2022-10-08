@@ -25,13 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdWeb.DataAccess", "src\AdW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdWeb.Registerer", "src\AdWeb\Infrastructure\AdWeb.Registerer\AdWeb.Registerer.csproj", "{A3DD2A20-7E30-41A2-9BBD-3970FC32ADD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWeb.Migrations", "src\AdWeb\Infrastructure\AdWeb.Migrations\AdWeb.Migrations.csproj", "{3F26A4F7-CDEB-424E-857B-0C50519DEBB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdWeb.Migrations", "src\AdWeb\Infrastructure\AdWeb.Migrations\AdWeb.Migrations.csproj", "{3F26A4F7-CDEB-424E-857B-0C50519DEBB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWeb.Infrastructure", "src\AdWeb\Infrastructure\AdWeb.Infrastructure\AdWeb.Infrastructure.csproj", "{EFC7E09D-2388-486B-A84C-C1127B0C8261}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdWeb.Infrastructure", "src\AdWeb\Infrastructure\AdWeb.Infrastructure\AdWeb.Infrastructure.csproj", "{EFC7E09D-2388-486B-A84C-C1127B0C8261}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9F55A590-3B91-4406-A1C7-C1AD53046CD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWeb.AppServices", "src\AdWeb\Application\AdWeb.AppServices\AdWeb.AppServices.csproj", "{A5FFA847-A923-407C-BE65-E0FCAC4BD14A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdWeb.AppServices", "src\AdWeb\Application\AdWeb.AppServices\AdWeb.AppServices.csproj", "{A5FFA847-A923-407C-BE65-E0FCAC4BD14A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
