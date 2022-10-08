@@ -21,11 +21,11 @@ namespace AdWeb.Registerer
         {
             services.AddSingleton<IDateTimeService, DateTimeService>();
 
-            services.AddDbContext<AdBoardContext>((Action<IServiceProvider, DbContextOptionsBuilder>)
-              ((sp, dbOptions) => sp.GetRequiredService<IDbContextOptionsConfigurator<AdBoardContext>>()
-                .Configure((DbContextOptionsBuilder<AdBoardContext>)dbOptions)));
-            services.AddSingleton<IDbContextOptionsConfigurator<AdBoardContext>, AdBoardContextConfiguration>();
-            services.AddScoped(sp => (DbContext)sp.GetRequiredService<AdBoardContext>());
+            services.AddDbContext<AdWebContext>((Action<IServiceProvider, DbContextOptionsBuilder>)
+              ((sp, dbOptions) => sp.GetRequiredService<IDbContextOptionsConfigurator<AdWebContext>>()
+                .Configure((DbContextOptionsBuilder<AdWebContext>)dbOptions)));
+            services.AddSingleton<IDbContextOptionsConfigurator<AdWebContext>, AdWebContextConfiguration>();
+            services.AddScoped(sp => (DbContext)sp.GetRequiredService<AdWebContext>());
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddTransient<IAdRepository, AdRepository>();

@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace AdWeb.DataAccess
 {
-    public class AdBoardContext : DbContext
+    public class AdWebContext : DbContext
     {
         /// <summary>
-        /// Инициализирует экземпляр <see cref="AdBoardContext"/>
+        /// Инициализирует экземпляр <see cref="AdWebContext"/>
         /// </summary>
-        public AdBoardContext(DbContextOptions options) : base(options)
+        public AdWebContext(DbContextOptions options) : base(options)
         {
 
         }

@@ -10,20 +10,20 @@ using System.Threading.Tasks;
 
 namespace AdWeb.DataAccess
 {
-    public class AdBoardContextConfiguration : IDbContextOptionsConfigurator<AdBoardContext>
+    public class AdWebContextConfiguration : IDbContextOptionsConfigurator<AdWebContext>
     {
         private const string PostGresConnectionStringName = "PostgresAdWebDb";
         private const string MsSqlConnectionStringName = "MsSqlAdWebDb";
         private readonly IConfiguration _configuration;
         private readonly ILoggerFactory _loggerFactory;
 
-        public AdBoardContextConfiguration(ILoggerFactory loggerFactory, IConfiguration configuration)
+        public AdWebContextConfiguration(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _loggerFactory = loggerFactory;
             _configuration = configuration;
         }
 
-        public void Configure(DbContextOptionsBuilder<AdBoardContext> options)
+        public void Configure(DbContextOptionsBuilder<AdWebContext> options)
         {
             string connectionString;
 

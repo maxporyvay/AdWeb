@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdWeb.Migrations
 {
-    public class MigrationsDbContext : AdBoardContext
+    public class MigrationsDbContext : AdWebContext
     {
         public MigrationsDbContext(DbContextOptions<MigrationsDbContext> options) : base(options)
         {
