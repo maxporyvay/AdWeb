@@ -23,7 +23,9 @@ namespace AdWeb.Migrations.Factories
 
             // получаем строку подключения из файла appsettings.json
             string connectionString = config.GetConnectionString("PostgresAdWebDb");
-            optionsBuilder.UseNpgsql(connectionString, opts => opts.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds));
+            optionsBuilder.UseNpgsql(connectionString, opts => opts
+                .CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds)
+                .MigrationsAssembly(typeof(MigrationContextFactory).Assembly.FullName));
             return new MigrationsDbContext(optionsBuilder.Options);
         }
     }

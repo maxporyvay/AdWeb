@@ -13,6 +13,7 @@
             <summary>
             Возвращает объявления, размещенные пользователями.
             </summary>
+            <param name="cancellation"></param>
             <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoard.AdBoardDto"/>.</returns>
         </member>
         <member name="M:AdWeb.Api.Controllers.AdBoardController.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
@@ -20,17 +21,28 @@
             Удаляет объявление.
             </summary>
             <param name="id">Идентификатор объявления</param>
+            <param name="cancellation"></param>
         </member>
         <member name="M:AdWeb.Api.Controllers.AdBoardController.UpdateAsync(System.Guid,System.Threading.CancellationToken)">
             <summary>
             Вносит изменения в объявление.
             </summary>
             <param name="id">Идентификатор объявления</param>
+            <param name="cancellation"></param>
         </member>
         <member name="T:AdWeb.Api.Controllers.AdController">
             <summary>
             Работа с объявлением .
             </summary>
+        </member>
+        <member name="M:AdWeb.Api.Controllers.AdController.GetAll(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <param name="cancellation"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

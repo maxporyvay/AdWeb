@@ -14,6 +14,7 @@ namespace AdWeb.AppServices.Ad.Repositories
         /// </summary>
         /// <param name="take"></param>
         /// <param name="skip"></param>
+        /// <param name="cancellation"></param>
         /// <returns></returns>
         Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip, CancellationToken cancellation);
 
@@ -21,6 +22,7 @@ namespace AdWeb.AppServices.Ad.Repositories
         /// 
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="cancellation"></param>
         /// <returns></returns>
         Task<IReadOnlyCollection<AdDto>> GetAllFiltered(AdFilterRequest request, CancellationToken cancellation);
     }

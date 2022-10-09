@@ -15,13 +15,15 @@ namespace AdWeb.AppServices.AdBoard.Services
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="cancellation"></param>
         /// <returns></returns>
         Task<IReadOnlyCollection<AdBoardDto>> GetAsync(CancellationToken cancellation);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="cancellation"></param>
         /// <returns></returns>
         Task UpdateAsync(Guid id, CancellationToken cancellation);
 
@@ -29,6 +31,7 @@ namespace AdWeb.AppServices.AdBoard.Services
         /// 
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="cancellation"></param>
         /// <returns></returns>
         Task DeleteAsync(Guid id, CancellationToken cancellation);
     }

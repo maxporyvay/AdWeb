@@ -22,12 +22,12 @@ namespace AdWeb.DataAccess.EntityConfigurations.Ad
         public async Task<IReadOnlyCollection<AdDto>> GetAll(int take, int skip, CancellationToken cancellation)
         {
             return await _repository.GetAll()
-                .Select(p => new AdDto
+                .Select(a => new AdDto
                 {
-                    Id = p.Id,
-                    AdTitle = p.AdTitle,
-                    AdDescription = p.AdDescription,
-                    PublishTime = p.PublishTime
+                    Id = a.Id,
+                    AdTitle = a.AdTitle,
+                    AdDescription = a.AdDescription,
+                    PublishTime = a.PublishTime
                 })
                 .Take(take).Skip(skip).ToListAsync(cancellation);
         }
@@ -38,20 +38,20 @@ namespace AdWeb.DataAccess.EntityConfigurations.Ad
 
             if (request.Id.HasValue)
             {
-                query = query.Where(p => p.Id == request.Id);
+                query = query.Where(a => a.Id == request.Id);
             }
 
             if (!string.IsNullOrWhiteSpace(request.AdTitle))
             {
-                query = query.Where(p => p.AdTitle.ToLower().Contains(request.AdTitle.ToLower()));
+                query = query.Where(a => a.AdTitle.ToLower().Contains(request.AdTitle.ToLower()));
             }
             
-            return await query.Select(p => new AdDto
+            return await query.Select(a => new AdDto
                 {
-                    Id = p.Id,
-                    AdTitle = p.AdTitle,
-                    AdDescription = p.AdDescription,
-                    PublishTime = p.PublishTime
+                    Id = a.Id,
+                    AdTitle = a.AdTitle,
+                    AdDescription = a.AdDescription,
+                    PublishTime = a.PublishTime
                 }).ToListAsync(cancellation);
         }
     }

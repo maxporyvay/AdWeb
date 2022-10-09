@@ -19,6 +19,13 @@ namespace AdWeb.Api.Controllers
             _adService = adService;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="take"></param>
+        /// <param name="skip"></param>
+        /// <param name="cancellation"></param>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(typeof(IReadOnlyCollection<AdDto>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetAll(int take, int skip, CancellationToken cancellation)

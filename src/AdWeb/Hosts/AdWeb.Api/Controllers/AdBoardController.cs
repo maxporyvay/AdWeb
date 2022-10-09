@@ -22,6 +22,7 @@ namespace AdWeb.Api.Controllers
         /// <summary>
         /// Возвращает объявления, размещенные пользователями.
         /// </summary>
+        /// <param name="cancellation"></param>
         /// <returns>Коллекция элементов <see cref="AdBoardDto"/>.</returns>
         [HttpGet]
         [ProducesResponseType(typeof(IReadOnlyCollection<AdBoardDto>), (int)HttpStatusCode.OK)]
@@ -35,6 +36,7 @@ namespace AdWeb.Api.Controllers
         /// Удаляет объявление.
         /// </summary>
         /// <param name="id">Идентификатор объявления</param>
+        /// <param name="cancellation"></param>
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -48,6 +50,7 @@ namespace AdWeb.Api.Controllers
         /// Вносит изменения в объявление.
         /// </summary>
         /// <param name="id">Идентификатор объявления</param>
+        /// <param name="cancellation"></param>
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]

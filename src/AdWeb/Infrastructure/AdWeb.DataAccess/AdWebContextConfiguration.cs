@@ -17,6 +17,11 @@ namespace AdWeb.DataAccess
         private readonly IConfiguration _configuration;
         private readonly ILoggerFactory _loggerFactory;
 
+        /// <summary>
+        /// Инициализирует экземпляр <see cref="AdWebtContextConfiguration"/>.
+        /// </summary>
+        /// <param name="configuration">Конфигурация.</param>
+        /// <param name="loggerFactory">Фабрика средства логирования.</param>
         public AdWebContextConfiguration(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _loggerFactory = loggerFactory;
@@ -27,8 +32,7 @@ namespace AdWeb.DataAccess
         {
             string connectionString;
 
-            // var useMsSql = _configuration.Get<bool>("DataBaseOptions:UseMsSql").Value;
-            var useMsSql = false;
+            var useMsSql = _configuration.GetSection("DataBaseOptions:UseMsSql").Get<bool>();
 
             if (!useMsSql)
             {

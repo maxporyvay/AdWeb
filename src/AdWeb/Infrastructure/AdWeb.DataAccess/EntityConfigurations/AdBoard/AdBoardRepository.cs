@@ -22,11 +22,11 @@ namespace AdWeb.DataAccess.EntityConfigurations.AdBoard
         public async Task<IReadOnlyCollection<AdBoardDto>> GetAllAsync(CancellationToken cancellation)
         {
             return await _repository.GetAll()
-                .Include(s => s.Ad)
-                .Select(s => new AdBoardDto
+                .Include(b => b.Ad)
+                .Select(b => new AdBoardDto
                 {
-                    Id = s.Id,
-                    AdTitle = s.Ad.AdTitle
+                    Id = b.Id,
+                    AdTitle = b.Ad.AdTitle
                 }).ToListAsync(cancellation);
         }
 

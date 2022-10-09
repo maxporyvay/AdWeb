@@ -1,8 +1,14 @@
 ﻿using AdWeb.AppServices.Ad.Repositories;
 using AdWeb.AppServices.Ad.Services;
+using AdWeb.AppServices.AdBoard.Repositories;
+using AdWeb.AppServices.AdBoard.Services;
 using AdWeb.AppServices.Services;
+using AdWeb.AppServices.User.Repositories;
+using AdWeb.AppServices.User.Services;
 using AdWeb.DataAccess;
 using AdWeb.DataAccess.EntityConfigurations.Ad;
+using AdWeb.DataAccess.EntityConfigurations.AdBoard;
+using AdWeb.DataAccess.EntityConfigurations.User;
 using AdWeb.DataAccess.Interfaces;
 using AdWeb.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +33,12 @@ namespace AdWeb.Registerer
             services.AddSingleton<IDbContextOptionsConfigurator<AdWebContext>, AdWebContextConfiguration>();
             services.AddScoped(sp => (DbContext)sp.GetRequiredService<AdWebContext>());
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserService, UserService>();
+
+            services.AddTransient<IAdBoardRepository, AdBoardRepository>();
+            services.AddTransient<IAdBoardService, AdBoardService>();
 
             services.AddTransient<IAdRepository, AdRepository>();
             services.AddTransient<IAdService, AdService>();

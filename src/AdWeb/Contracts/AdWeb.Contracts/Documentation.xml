@@ -59,5 +59,25 @@
             Заголовок объявления.
             </summary>
         </member>
+        <member name="T:AdWeb.Contracts.User.UserDto">
+            <summary>
+            Модель представления пользователя.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.User.UserDto.Id">
+            <summary>
+            Идентификатор пользователя.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.User.UserDto.Name">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.User.UserDto.Password">
+            <summary>
+            Пароль пользователя.
+            </summary>
+        </member>
     </members>
 </doc>
