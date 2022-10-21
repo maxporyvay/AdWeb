@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Contracts\AdWeb.Contracts\AdWeb.Contracts.csproj" />
+    <ProjectReference Include="..\..\Domain\AdWeb.Domain\AdWeb.Domain.csproj" />
   </ItemGroup>
 
 </Project>

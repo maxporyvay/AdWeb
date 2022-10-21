@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdWeb.AppServices.User.Services
 {
+    /// <inheritdoc />
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
@@ -18,9 +19,23 @@ namespace AdWeb.AppServices.User.Services
         }
 
         /// <inheritdoc />
-        public Task<IReadOnlyCollection<UserDto>> GetAll(int take, int skip, CancellationToken cancellation)
+        public Task<Domain.User> GetCurrent(CancellationToken cancellation)
         {
-            return _userRepository.GetAll(take, skip, cancellation);
+            throw new NotImplementedException();
+        }
+
+        /// <inheritdoc />
+        public async Task<string> Login(string login, string password, CancellationToken cancellation)
+        {
+            var result = "bread"; // TODO
+            return result;
+        }
+
+        /// <inheritdoc />
+        public async Task<int> Register(string login, string password, CancellationToken cancellation)
+        {
+            var result = 1; // TODO (+ why int not Guid)
+            return result;
         }
     }
 }

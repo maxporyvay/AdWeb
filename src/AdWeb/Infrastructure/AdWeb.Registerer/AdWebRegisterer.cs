@@ -32,6 +32,7 @@ namespace AdWeb.Registerer
                 .Configure((DbContextOptionsBuilder<AdWebContext>)dbOptions)));
             services.AddSingleton<IDbContextOptionsConfigurator<AdWebContext>, AdWebContextConfiguration>();
             services.AddScoped(sp => (DbContext)sp.GetRequiredService<AdWebContext>());
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddTransient<IUserRepository, UserRepository>();

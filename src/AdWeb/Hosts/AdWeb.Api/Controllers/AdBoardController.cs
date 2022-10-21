@@ -1,5 +1,6 @@
 using AdWeb.AppServices.AdBoard.Services;
 using AdWeb.Contracts.AdBoard;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -9,11 +10,16 @@ namespace AdWeb.Api.Controllers
     /// Работа с доской объявлений.
     /// </summary>
     [ApiController]
+    [Authorize]
     [Route("v1/[controller]")]
     public class AdBoardController : ControllerBase
     {
         private readonly IAdBoardService _adBoardService;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="adBoardService"></param>
         public AdBoardController(IAdBoardService adBoardService)
         {
             _adBoardService = adBoardService;

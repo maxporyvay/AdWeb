@@ -9,6 +9,12 @@
             Работа с доской объявлений.
             </summary>
         </member>
+        <member name="M:AdWeb.Api.Controllers.AdBoardController.#ctor(AdWeb.AppServices.AdBoard.Services.IAdBoardService)">
+            <summary>
+            
+            </summary>
+            <param name="adBoardService"></param>
+        </member>
         <member name="M:AdWeb.Api.Controllers.AdBoardController.GetAsync(System.Threading.CancellationToken)">
             <summary>
             Возвращает объявления, размещенные пользователями.
@@ -32,8 +38,14 @@
         </member>
         <member name="T:AdWeb.Api.Controllers.AdController">
             <summary>
-            Работа с объявлением .
+            Работа с объявлением.
             </summary>
+        </member>
+        <member name="M:AdWeb.Api.Controllers.AdController.#ctor(AdWeb.AppServices.Ad.Services.IAdService)">
+            <summary>
+            
+            </summary>
+            <param name="adService"></param>
         </member>
         <member name="M:AdWeb.Api.Controllers.AdController.GetAll(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
@@ -42,6 +54,47 @@
             <param name="take"></param>
             <param name="skip"></param>
             <param name="cancellation"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdWeb.Api.Controllers.UserController">
+            <summary>
+            Работа с пользователем.
+            </summary>
+        </member>
+        <member name="M:AdWeb.Api.Controllers.UserController.#ctor(AdWeb.AppServices.User.Services.IUserService)">
+            <summary>
+            
+            </summary>
+            <param name="userService"></param>
+        </member>
+        <member name="M:AdWeb.Api.Controllers.UserController.Register(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="login"></param>
+            <param name="password"></param>
+            <param name="cancellation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdWeb.Api.Controllers.UserController.Login(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="login"></param>
+            <param name="password"></param>
+            <param name="cancellation"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdWeb.Api.SwaggerModule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AdWeb.Api.SwaggerModule.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
             <returns></returns>
         </member>
     </members>

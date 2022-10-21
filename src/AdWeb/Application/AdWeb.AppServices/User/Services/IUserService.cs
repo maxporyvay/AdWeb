@@ -13,12 +13,28 @@ namespace AdWeb.AppServices.User.Services
     public interface IUserService
     {
         /// <summary>
-        /// 
+        /// Регистрация пользователя.
         /// </summary>
-        /// <param name="take"></param>
-        /// <param name="skip"></param>
+        /// <param name="login">Логин.</param>
+        /// <param name="password">Пароль.</param>
         /// <param name="cancellation"></param>
-        /// <returns></returns>
-        Task<IReadOnlyCollection<UserDto>> GetAll(int take, int skip, CancellationToken cancellation);
+        /// <returns>Идентификатор пользователя.</returns>
+        Task<int> Register(string login, string password, CancellationToken cancellation);
+
+        /// <summary>
+        /// Вход пользователя в систему.
+        /// </summary>
+        /// <param name="login">Логин.</param>
+        /// <param name="password">Пароль.</param>
+        /// <param name="cancellation"></param>
+        /// <returns>Токен.</returns>
+        Task<string> Login(string login, string password, CancellationToken cancellation);
+
+        /// <summary>
+        /// Получить текущего пользователя.
+        /// </summary>
+        /// <param name="cancellation"></param>
+        /// <returns>Токен.</returns>
+        Task<Domain.User> GetCurrent(CancellationToken cancellation);
     }
 }

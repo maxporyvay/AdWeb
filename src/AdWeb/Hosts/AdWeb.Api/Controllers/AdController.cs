@@ -6,7 +6,7 @@ using System.Net;
 namespace AdWeb.Api.Controllers
 {
     /// <summary>
-    /// Работа с объявлением .
+    /// Работа с объявлением.
     /// </summary>
     [ApiController]
     [Route("v1/[controller]")]
@@ -14,6 +14,10 @@ namespace AdWeb.Api.Controllers
     {
         private readonly IAdService _adService;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="adService"></param>
         public AdController(IAdService adService)
         {
             _adService = adService;

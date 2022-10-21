@@ -18,17 +18,5 @@ namespace AdWeb.DataAccess.EntityConfigurations.User
         {
             _repository = repository;
         }
-
-        public async Task<IReadOnlyCollection<UserDto>> GetAll(int take, int skip, CancellationToken cancellation)
-        {
-            return await _repository.GetAll()
-                .Select(u => new UserDto
-                {
-                    Id = u.Id,
-                    Name = u.Name,
-                    Password = u.Password,
-                })
-                .Take(take).Skip(skip).ToListAsync(cancellation);
-        }
     }
 }
