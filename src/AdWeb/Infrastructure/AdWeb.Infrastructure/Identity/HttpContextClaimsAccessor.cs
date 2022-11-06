@@ -18,9 +18,9 @@ namespace AdWeb.Infrastructure.Identity
             _contextAccessor = contextAccessor;
         }
 
-        public Task<IEnumerable<Claim>> GetClaims(CancellationToken cancellation)
+        public async Task<IEnumerable<Claim>> GetClaims(CancellationToken cancellation)
         {
-            return (Task<IEnumerable<Claim>>)_contextAccessor.HttpContext.User.Claims;
+            return _contextAccessor.HttpContext.User.Claims;
         }
     }
 }

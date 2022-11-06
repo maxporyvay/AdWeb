@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using AdWeb.Contracts.AdBoard;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
 namespace AdWeb.Api
@@ -13,15 +14,19 @@ namespace AdWeb.Api
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddSwagger(this IServiceCollection services)
+        public static IServiceCollection AddSwaggerModule(this IServiceCollection services)
         {
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "AdWeb Api", Version = "V1" }); //TODO more xmls?
+                options.CustomSchemaIds(type => type.FullName.Replace("+", "_"));
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "AdWeb Api", Version = "V1" });
+                //options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{typeof(AdBoardDto).Assembly.GetName().Name}.xml")); // зачем ???????
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Documentation.xml"));
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Description = "JWT Authorization header using the Bearer scheme",
+                    Description = @"JWT Authorization header using the Bearer scheme.  
+                        Enter 'Bearer' [space] and then your token in the text input below.
+                        Example: 'Bearer secretKey'",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,

@@ -1,4 +1,5 @@
-﻿using AdWeb.AppServices.Ad.Repositories;
+﻿using AdWeb.AppServices;
+using AdWeb.AppServices.Ad.Repositories;
 using AdWeb.AppServices.Ad.Services;
 using AdWeb.AppServices.AdBoard.Repositories;
 using AdWeb.AppServices.AdBoard.Services;
@@ -10,6 +11,7 @@ using AdWeb.DataAccess.EntityConfigurations.Ad;
 using AdWeb.DataAccess.EntityConfigurations.AdBoard;
 using AdWeb.DataAccess.EntityConfigurations.User;
 using AdWeb.DataAccess.Interfaces;
+using AdWeb.Infrastructure.Identity;
 using AdWeb.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +25,7 @@ namespace AdWeb.Registerer
 {
     public static class AdWebRegisterer
     {
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        public static IServiceCollection AddServiceRegistrationModule(this IServiceCollection services)
         {
             services.AddSingleton<IDateTimeService, DateTimeService>();
             services.AddSingleton<IDbContextOptionsConfigurator<AdWebContext>, AdWebContextConfiguration>();
@@ -43,6 +45,8 @@ namespace AdWeb.Registerer
 
             services.AddTransient<IAdRepository, AdRepository>();
             services.AddTransient<IAdService, AdService>();
+
+            services.AddScoped<IClaimsAccessor, HttpContextClaimsAccessor>();
 
             return services;
         }

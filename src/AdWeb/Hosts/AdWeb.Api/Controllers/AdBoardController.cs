@@ -1,4 +1,5 @@
 using AdWeb.AppServices.AdBoard.Services;
+using AdWeb.AppServices.User.Services;
 using AdWeb.Contracts.AdBoard;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,14 +16,17 @@ namespace AdWeb.Api.Controllers
     public class AdBoardController : ControllerBase
     {
         private readonly IAdBoardService _adBoardService;
+        private readonly IUserService _userService;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="adBoardService"></param>
-        public AdBoardController(IAdBoardService adBoardService)
+        /// <param name="userService"></param>
+        public AdBoardController(IAdBoardService adBoardService, IUserService userService)
         {
             _adBoardService = adBoardService;
+            _userService = userService;
         }
 
         /// <summary>
@@ -44,10 +48,11 @@ namespace AdWeb.Api.Controllers
         /// <param name="cancellation"></param>
         /// <returns>Коллекция элементов <see cref="AdBoardDto"/>.</returns>
         [HttpPost]
-        [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.Created)]
-        public async Task<IActionResult> CreateAsync(CancellationToken cancellation)
+        [ProducesResponseType(typeof(IReadOnlyCollection<AdBoardDto>), (int)HttpStatusCode.Created)]
+        public async Task<IActionResult> PostAsync(CancellationToken cancellation)
         {
-            var result = await _adBoardService.CreateAsync(cancellation);
+            var user = await _userService.GetCurrent(cancellation); //зачем здесь ???????
+            var result = await _adBoardService.GetAsync(cancellation); //почему не CreateAsync ??????
             return Ok(result);
         }
 

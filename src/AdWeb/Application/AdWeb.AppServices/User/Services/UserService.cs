@@ -1,5 +1,6 @@
 ﻿using AdWeb.AppServices.User.Repositories;
 using AdWeb.Contracts.User;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,13 @@ namespace AdWeb.AppServices.User.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IClaimsAccessor _claimsAccessor;
+        private readonly IConfiguration _configuration;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IClaimsAccessor claimsAccessor, IConfiguration configuration)
         {
             _userRepository = userRepository;
+            _claimsAccessor = claimsAccessor;
+            _configuration = configuration;
         }
 
         /// <inheritdoc />
@@ -33,8 +37,6 @@ namespace AdWeb.AppServices.User.Services
             {
                 return null;
             }
-
-            //var user = await 
 
             return null; 
         }
@@ -59,7 +61,7 @@ namespace AdWeb.AppServices.User.Services
                 new Claim(ClaimTypes.Name, existingUser.Login)
             };
 
-            var secretKey = "breadbreadbreadbreadbreadbreadbreadbreadbread"; //TODO
+            var secretKey = _configuration["Token:SecretKey"];
 
             var token = new JwtSecurityToken(
                     claims: claims,

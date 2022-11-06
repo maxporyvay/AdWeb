@@ -4,16 +4,30 @@
         <name>AdWeb.Api</name>
     </assembly>
     <members>
+        <member name="T:AdWeb.Api.AuthenticationModule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AdWeb.Api.AuthenticationModule.AddAuthenticationModule(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
         <member name="T:AdWeb.Api.Controllers.AdBoardController">
             <summary>
             Работа с доской объявлений.
             </summary>
         </member>
-        <member name="M:AdWeb.Api.Controllers.AdBoardController.#ctor(AdWeb.AppServices.AdBoard.Services.IAdBoardService)">
+        <member name="M:AdWeb.Api.Controllers.AdBoardController.#ctor(AdWeb.AppServices.AdBoard.Services.IAdBoardService,AdWeb.AppServices.User.Services.IUserService)">
             <summary>
             
             </summary>
             <param name="adBoardService"></param>
+            <param name="userService"></param>
         </member>
         <member name="M:AdWeb.Api.Controllers.AdBoardController.GetAsync(System.Threading.CancellationToken)">
             <summary>
@@ -22,16 +36,16 @@
             <param name="cancellation"></param>
             <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoard.AdBoardDto"/>.</returns>
         </member>
-        <member name="M:AdWeb.Api.Controllers.AdBoardController.CreateAsync(System.Threading.CancellationToken)">
+        <member name="M:AdWeb.Api.Controllers.AdBoardController.PostAsync(System.Threading.CancellationToken)">
             <summary>
-            Возвращает объявления, размещенные пользователями.
+            Создает доску объявлений.
             </summary>
             <param name="cancellation"></param>
             <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoard.AdBoardDto"/>.</returns>
         </member>
         <member name="M:AdWeb.Api.Controllers.AdBoardController.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
             <summary>
-            Удаляет объявление.
+            Удаляет объявление с доски.
             </summary>
             <param name="id">Идентификатор объявления</param>
             <param name="cancellation"></param>
@@ -97,7 +111,7 @@
             
             </summary>
         </member>
-        <member name="M:AdWeb.Api.SwaggerModule.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:AdWeb.Api.SwaggerModule.AddSwaggerModule(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             
             </summary>
