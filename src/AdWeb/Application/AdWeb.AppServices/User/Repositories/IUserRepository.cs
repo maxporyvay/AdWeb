@@ -13,5 +13,7 @@ namespace AdWeb.AppServices.User.Repositories
         Task<Domain.User> FindWhere(Expression<Func<Domain.User, bool>> predicate, CancellationToken cancellation);
 
         Task AddAsync(Domain.User model);
+
+        Task<Domain.User> FindById(Guid id, CancellationToken cancellation);
     }
 }

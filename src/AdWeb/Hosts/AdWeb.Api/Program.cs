@@ -4,6 +4,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Identity;
+using AdWeb.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,10 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerModule();
 
 builder.Services.AddAuthenticationModule(builder.Configuration);
+
+/*builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AdWebContext>()
+    .AddDefaultTokenProviders();*/
 
 var app = builder.Build();
 

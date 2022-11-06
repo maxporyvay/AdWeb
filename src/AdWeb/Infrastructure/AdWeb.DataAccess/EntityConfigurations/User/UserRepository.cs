@@ -25,6 +25,11 @@ namespace AdWeb.DataAccess.EntityConfigurations.User
             return _repository.AddAsync(model);
         }
 
+        public Task<Domain.User> FindById(Guid id, CancellationToken cancellation)
+        {
+            return _repository.GetByIdAsync(id);
+        }
+
         public async Task<Domain.User> FindWhere(Expression<Func<Domain.User, bool>> predicate, CancellationToken cancellation)
         {
             var data = _repository.GetAllFiltered(predicate);

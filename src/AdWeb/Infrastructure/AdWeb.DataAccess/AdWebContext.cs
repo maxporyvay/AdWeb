@@ -1,5 +1,7 @@
 ﻿using AdWeb.DataAccess.EntityConfigurations.Ad;
 using AdWeb.DataAccess.EntityConfigurations.AdBoard;
+using AdWeb.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AdWeb.DataAccess
 {
-    public class AdWebContext : DbContext
+    public class AdWebContext : IdentityDbContext<ApplicationUser>
     {
         /// <summary>
         /// Инициализирует экземпляр <see cref="AdWebContext"/>
@@ -25,6 +27,8 @@ namespace AdWeb.DataAccess
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly(), t => t.GetInterfaces().Any(i =>
                 i.IsGenericType &&
                 i.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>)));
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
