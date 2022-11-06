@@ -22,8 +22,18 @@ namespace AdWeb.Domain
         public string Name { get; set; }
 
         /// <summary>
+        /// Логин пользователя.
+        /// </summary>
+        public string Login { get; set; }
+
+        /// <summary>
         /// Пароль пользователя.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Дата регистрации пользователя.
+        /// </summary>
+        public DateTime CreationTime { get; set; }
     }
 }

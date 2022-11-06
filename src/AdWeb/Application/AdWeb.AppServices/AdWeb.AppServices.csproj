@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.24.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Contracts\AdWeb.Contracts\AdWeb.Contracts.csproj" />
     <ProjectReference Include="..\..\Domain\AdWeb.Domain\AdWeb.Domain.csproj" />
   </ItemGroup>

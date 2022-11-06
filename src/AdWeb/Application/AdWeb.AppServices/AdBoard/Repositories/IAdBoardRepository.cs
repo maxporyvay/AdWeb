@@ -10,6 +10,7 @@ namespace AdWeb.AppServices.AdBoard.Repositories
     public interface IAdBoardRepository
     {
         Task<IReadOnlyCollection<AdBoardDto>> GetAllAsync(CancellationToken cancellation);
+        Task<Guid> CreateAsync(CancellationToken cancellation);
         Task DeleteAsync(Guid id, CancellationToken cancellation);
         Task UpdateAsync(Guid id, CancellationToken cancellation);
     }

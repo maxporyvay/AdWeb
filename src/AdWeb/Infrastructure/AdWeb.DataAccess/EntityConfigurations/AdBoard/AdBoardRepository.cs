@@ -30,6 +30,15 @@ namespace AdWeb.DataAccess.EntityConfigurations.AdBoard
                 }).ToListAsync(cancellation);
         }
 
+        public async Task<Guid> CreateAsync(CancellationToken cancellation)
+        {
+            var AdBoard = new Domain.AdBoard();
+
+            await _repository.AddAsync(AdBoard);
+
+            return AdBoard.Id;
+        }
+
         public async Task DeleteAsync(Guid id, CancellationToken cancellation)
         {
             var existingAdBoard = await _repository.GetByIdAsync(id);

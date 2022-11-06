@@ -39,7 +39,20 @@ namespace AdWeb.Api.Controllers
         }
 
         /// <summary>
-        /// Удаляет объявление.
+        /// Создает доску объявлений.
+        /// </summary>
+        /// <param name="cancellation"></param>
+        /// <returns>Коллекция элементов <see cref="AdBoardDto"/>.</returns>
+        [HttpPost]
+        [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.Created)]
+        public async Task<IActionResult> CreateAsync(CancellationToken cancellation)
+        {
+            var result = await _adBoardService.CreateAsync(cancellation);
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// Удаляет объявление с доски.
         /// </summary>
         /// <param name="id">Идентификатор объявления</param>
         /// <param name="cancellation"></param>

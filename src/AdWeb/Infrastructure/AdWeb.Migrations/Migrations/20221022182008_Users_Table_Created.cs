@@ -14,8 +14,10 @@ namespace AdWeb.Migrations.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "character varying(800)", maxLength: 800, nullable: false),
-                    Password = table.Column<string>(type: "character varying(800)", maxLength: 800, nullable: false)
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Login = table.Column<string>(type: "character varying(800)", maxLength: 800, nullable: false),
+                    Password = table.Column<string>(type: "character varying(800)", maxLength: 800, nullable: false),
+                    CreationTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {

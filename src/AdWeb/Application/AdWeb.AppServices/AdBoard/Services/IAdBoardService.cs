@@ -20,6 +20,13 @@ namespace AdWeb.AppServices.AdBoard.Services
         Task<IReadOnlyCollection<AdBoardDto>> GetAsync(CancellationToken cancellation);
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellation"></param>
+        /// <returns></returns>
+        Task<Guid> CreateAsync(CancellationToken cancellation);
+
+        /// <summary>
         ///
         /// </summary>
         /// <param name="id"></param>

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AdWeb.Migrations.Migrations
 {
     [DbContext(typeof(MigrationsDbContext))]
-    [Migration("20221009165332_Users_Table_Created")]
+    [Migration("20221022182008_Users_Table_Created")]
     partial class Users_Table_Created
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,10 +70,17 @@ namespace AdWeb.Migrations.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Name")
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Login")
                         .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("character varying(800)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Password")
                         .IsRequired()

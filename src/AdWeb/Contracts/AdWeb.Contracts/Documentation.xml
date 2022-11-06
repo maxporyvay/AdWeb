@@ -74,9 +74,19 @@
             Имя пользователя.
             </summary>
         </member>
+        <member name="P:AdWeb.Contracts.User.UserDto.Login">
+            <summary>
+            Логин пользователя.
+            </summary>
+        </member>
         <member name="P:AdWeb.Contracts.User.UserDto.Password">
             <summary>
             Пароль пользователя.
+            </summary>
+        </member>
+        <member name="P:AdWeb.Contracts.User.UserDto.CreationTime">
+            <summary>
+            Дата регистрации пользователя.
             </summary>
         </member>
     </members>

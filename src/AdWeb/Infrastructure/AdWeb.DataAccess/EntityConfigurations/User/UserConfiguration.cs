@@ -19,6 +19,8 @@ namespace AdWeb.DataAccess.EntityConfigurations.User
 
             builder.Property(x => x.Name).HasMaxLength(800);
 
+            builder.Property(x => x.Login).HasMaxLength(800);
+
             builder.Property(x => x.Password).HasMaxLength(800);
 
             /*builder.HasMany(x => x.AdBoards)

@@ -26,13 +26,13 @@ namespace AdWeb.Registerer
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddSingleton<IDateTimeService, DateTimeService>();
+            services.AddSingleton<IDbContextOptionsConfigurator<AdWebContext>, AdWebContextConfiguration>();
 
             services.AddDbContext<AdWebContext>((Action<IServiceProvider, DbContextOptionsBuilder>)
               ((sp, dbOptions) => sp.GetRequiredService<IDbContextOptionsConfigurator<AdWebContext>>()
                 .Configure((DbContextOptionsBuilder<AdWebContext>)dbOptions)));
-            services.AddSingleton<IDbContextOptionsConfigurator<AdWebContext>, AdWebContextConfiguration>();
-            services.AddScoped(sp => (DbContext)sp.GetRequiredService<AdWebContext>());
 
+            services.AddScoped((Func<IServiceProvider, DbContext>)(sp => sp.GetRequiredService<AdWebContext>()));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddTransient<IUserRepository, UserRepository>();

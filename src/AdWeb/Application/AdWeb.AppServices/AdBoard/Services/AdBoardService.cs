@@ -25,6 +25,12 @@ namespace AdWeb.AppServices.AdBoard.Services
         }
 
         /// <inheritdoc />
+        public Task<Guid> CreateAsync(CancellationToken cancellation)
+        {
+            return _adBoardRepository.CreateAsync(cancellation);
+        }
+
+        /// <inheritdoc />
         public Task DeleteAsync(Guid id, CancellationToken cancellation)
         {
             return _adBoardRepository.DeleteAsync(id, cancellation);

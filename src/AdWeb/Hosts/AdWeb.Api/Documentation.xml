@@ -22,6 +22,13 @@
             <param name="cancellation"></param>
             <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoard.AdBoardDto"/>.</returns>
         </member>
+        <member name="M:AdWeb.Api.Controllers.AdBoardController.CreateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Возвращает объявления, размещенные пользователями.
+            </summary>
+            <param name="cancellation"></param>
+            <returns>Коллекция элементов <see cref="T:AdWeb.Contracts.AdBoard.AdBoardDto"/>.</returns>
+        </member>
         <member name="M:AdWeb.Api.Controllers.AdBoardController.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
             <summary>
             Удаляет объявление.

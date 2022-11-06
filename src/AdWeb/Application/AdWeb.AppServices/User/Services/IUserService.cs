@@ -19,7 +19,7 @@ namespace AdWeb.AppServices.User.Services
         /// <param name="password">Пароль.</param>
         /// <param name="cancellation"></param>
         /// <returns>Идентификатор пользователя.</returns>
-        Task<int> Register(string login, string password, CancellationToken cancellation);
+        Task<Guid> Register(string login, string password, CancellationToken cancellation);
 
         /// <summary>
         /// Вход пользователя в систему.
